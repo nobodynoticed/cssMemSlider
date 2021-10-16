@@ -5,7 +5,6 @@
 }
 
 body {
-  background-color: #000;
   font-family: 'Saira', sans-serif;
   background-color: #232222;
   font-size: 20px;
@@ -13,13 +12,19 @@ body {
   color: #fff;
   margin: 0;
 }
+
 p {
   margin: 0;
 }
 
+h1 {
+  text-align: center;
+  text-shadow: #c0f 1px 0 10px;
+}
+
 .main {
   position: relative;
-  top: 20px;
+  top: 30px;
   margin: 0 auto;
   width: calc((1440 / 1880) * 100%);
 }
@@ -48,7 +53,7 @@ p {
 img {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 30px;
   display: inline-block;
 }
 
@@ -66,7 +71,6 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #222222;
 }
 
 .label {
@@ -82,4 +86,74 @@ p {
 .label:hover {
   background-color: #fff;
   border: 3px solid #fff;
+}
+
+input[type='radio']:checked + .label {
+  background-color: transparent;
+}
+
+input[type='radio'] {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+#radio-1:checked ~ .slide-1 {
+  margin-left: 0;
+}
+
+#radio-2:checked ~ .slide-1 {
+  margin-left: -20%;
+}
+
+#radio-3:checked ~ .slide-1 {
+  margin-left: -40%;
+}
+
+#radio-4:checked ~ .slide-1 {
+  margin-left: -60%;
+}
+
+#radio-5:checked ~ .slide-1 {
+  margin-left: -80%;
+}
+
+@media (max-width: 1023px) {
+  .main {
+    width: 95%;
+  }
+
+  .slider {
+    width: 80%;
+  }
+
+  .nav {
+    margin-left: calc(90% - 190px);
+  }
+}
+
+@media (max-width: 580px) {
+  .main {
+    width: 96%;
+  }
+
+  .slider {
+    width: 100%;
+  }
+
+  .nav {
+    top: -90px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  p {
+    margin-top: 51px;
+    text-align: left;
+  }
+}
+
+.label:focus {
+  background-color: transparent;
 }
