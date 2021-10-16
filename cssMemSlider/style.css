@@ -60,6 +60,7 @@ img {
 p {
   margin-top: 15px;
   text-transform: uppercase;
+  text-shadow: #c0f 1px 0 10px;
 }
 
 .nav {
